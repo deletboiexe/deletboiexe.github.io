@@ -1,0 +1,51 @@
+h1 {
+    color: #ffffff;
+    text-align: center;
+}
+h2 {
+    color: #aaaaaa;
+    text-align: center;
+}
+h3 {
+    color: #cccccc;
+    text-align: center;
+}
+h4 {
+    color: #999999;
+}
+h5 {
+    color: #00ff00;
+}
+body {
+   font-family: Arial, Helvetica, sans-serif;
+   background-color: #000000;
+   background-image: url("mypfp.png");
+   height: 100%;
+   
+}
+em {
+    color: #186e34;
+}
+
+summary {
+    color: goldenrod;
+}
+
+button {
+    color: yellow;
+    background-color: gold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+li {
+    color: #ffffff;
+}
+
+a {
+    color: #00ff00
+}
+
+html
+{
+    scroll-behavior: smooth;
+}
