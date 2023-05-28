@@ -1,4 +1,4 @@
-window.addEventListener("load", function() {
+/*window.addEventListener("load", function() {
     var userAgent = navigator.userAgent.toLowerCase();
   
     if (/mobile|android/.test(userAgent)) {
@@ -8,4 +8,4 @@ window.addEventListener("load", function() {
       }
     }
   });
-  
+  */
