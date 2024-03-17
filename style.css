@@ -21,12 +21,11 @@ h6 {
 }
 body {
    display: flex; 
-   font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+   font-family: Arial, Helvetica, sans-serif;
    background-color: #000000;
    background-image: url("mypfp.png");
-   /*height: auto;
+   height: auto;
    width: auto;
-   random text*/
    
 }
 em {
@@ -40,9 +39,9 @@ summary {
 button {
     display: flex;
     border-radius: 20px;
-    color: #;
+    color: #186e34;
     background-color: gold;
-    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 li {
@@ -50,7 +49,7 @@ li {
 }
 
 a {
-    color: #ffffff
+    color: #000000
 }
 
 html
