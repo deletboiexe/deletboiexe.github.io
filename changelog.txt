@@ -1,0 +1,7 @@
+(starting from 0.2b.7)
+
+0.2b.7 (30.03.2024)
+- moved archives.html and archives.css from ../archives 
+- revamped links (../folder/file from https://deletboiexe.github.io/folder/file)
+- grouped all css files
+* fixed season3.html
