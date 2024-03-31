@@ -4,4 +4,8 @@
 - moved archives.html and archives.css from ../archives 
 - revamped links (../folder/file from https://deletboiexe.github.io/folder/file)
 - grouped all css files
-* fixed season3.html
+
+0.2b.8 (31.03.2024)
+- fixed background missing on index.html
+- fixed links not working
+- updated archives.html
