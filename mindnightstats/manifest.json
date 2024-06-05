@@ -1,0 +1,20 @@
+{
+    "name": "mindnightstats",
+    "short_name": "mnstats",
+    "description": "stats for mindnight",
+    "start_url": "../mnstats.html",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#186e34",
+    "icons": [
+      {
+        "src": "../512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "orientation": "any",
+    "lang": "en-US",
+    "dir": "ltr"
+  }
+  

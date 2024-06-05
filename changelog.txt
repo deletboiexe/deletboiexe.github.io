@@ -9,3 +9,6 @@
 - fixed background missing on index.html
 - fixed links not working
 - updated archives.html
+
+0.2b.9 (05.06.2024)
+- attempting to make a live tile 
