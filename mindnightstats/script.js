@@ -1,22 +1,49 @@
-const sheetId = '1kEfo-PIHyzszq2i9vtdHa33rNSIkuWolotTDJyF4wLg';
-const apiKey = 'AIzaSyCwzZeg9z4bnUQXQe6Bez7KrIVrOZQ3WGs';
+const GOOGLE_SHEET_ID = '1kEfo-PIHyzszq2i9vtdHa33rNSIkuWolotTDJyF4wLg';
+const API_KEY = 'AIzaSyCwzZeg9z4bnUQXQe6Bez7KrIVrOZQ3WGs';
 
-async function fetchData() {
-    const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/Sheet1?key=${apiKey}`;
-    const response = await fetch(url);
-    const data = await response.json();
-    displayData(data);
-}
+function fetchGoogleSheetData() {
+  const url = `https://sheets.googleapis.com/v4/spreadsheets/${GOOGLE_SHEET_ID}/values/Sheet1?key=${API_KEY}`;
 
-function displayData(data) {
-    const container = document.getElementById('data');
-    data.values.forEach(row => {
-        const rowDiv = document.createElement('div');
-        rowDiv.textContent = row.join(', ');
-        container.appendChild(rowDiv);
+  return fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      return data.values; // For simplicity, assuming data is an array of arrays
     });
 }
 
-fetchData();
+function updateStats(data) {
+  const stats = document.getElementById('stats');
+  stats.innerHTML = ''; // Clear previous content
 
-setInterval(fetchData, 600000);
+  // Create a table element
+  const table = document.createElement('table');
+  table.classList.add('data-table');
+
+  // Create table rows and cells
+  data.forEach((row, rowIndex) => {
+    const tr = document.createElement('tr');
+    row.forEach((cell, cellIndex) => {
+      const td = document.createElement(rowIndex === 0 ? 'th' : 'td'); // Use th for header row
+      td.textContent = cell;
+      tr.appendChild(td);
+    });
+    table.appendChild(tr);
+  });
+
+  // Append the table to the stats div
+  stats.appendChild(table);
+}
+
+function updateStatsPeriodically() {
+  fetchGoogleSheetData().then(data => {
+    updateStats(data);
+  });
+
+  setInterval(() => {
+    fetchGoogleSheetData().then(data => {
+      updateStats(data);
+    });
+  }, 300000); // Update every 5 minutes
+}
+
+updateStatsPeriodically();

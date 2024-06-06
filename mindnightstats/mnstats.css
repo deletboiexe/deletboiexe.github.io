@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Munro';
+    src: url('../Munro.ttf') format('ttf'),
+  }
+  
+  body {
+    font-family: 'Munro', sans-serif;
+  }
+  
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .data-table th,
+  .data-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    font-family: 'Munro', sans-serif; 
+  }
+  
+  .data-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
