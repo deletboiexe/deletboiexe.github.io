@@ -1,42 +1,23 @@
-// script.js
-const GOOGLE_SHEET_ID = '1kEfo-PIHyzszq2i9vtdHa33rNSIkuWolotTDJyF4wLg';
-const API_KEY = 'AIzaSyCwzZeg9z4bnUQXQe6Bez7KrIVrOZQ3WGs';
+const sheetId = '1kEfo-PIHyzszq2i9vtdHa33rNSIkuWolotTDJyF4wLg';
+const apiKey = 'AIzaSyCwzZeg9z4bnUQXQe6Bez7KrIVrOZQ3WGs';
+const range = 'Sheet1'
 
-function fetchGoogleSheetData() {
-  const url = `https://sheets.googleapis.com/v4/spreadsheets/${GOOGLE_SHEET_ID}/values/Sheet1?key=${API_KEY}`;
+async function fetchData() {
+    const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    displayData(data);
+}
 
-  return fetch(url)
-    .then(response => response.json())
-    .then(data => {
-      // Process the data and extract the information you need
-      return data.values; // For simplicity, assuming data is an array of arrays
+function displayData(data) {
+    const container = document.getElementById('data');
+    data.values.forEach(row => {
+        const rowDiv = document.createElement('div');
+        rowDiv.textContent = row.join(', ');
+        container.appendChild(rowDiv);
     });
 }
 
-function updateLiveTile(data) {
-  const liveTile = document.getElementById('live-tile');
-  liveTile.innerHTML = ''; // Clear previous content
-  
-  // Generate HTML content for the live tile
-  data.forEach(row => {
-    const rowElement = document.createElement('div');
-    rowElement.textContent = row.join(' | ');
-    liveTile.appendChild(rowElement);
-  });
-}
+fetchData();
 
-function updateLiveTilePeriodically() {
-  // Fetch data from Google Sheets and update live tile every 5 minutes
-  fetchGoogleSheetData().then(data => {
-    updateLiveTile(data);
-  });
-
-  setInterval(() => {
-    fetchGoogleSheetData().then(data => {
-      updateLiveTile(data);
-    });
-  }, 5 * 60 * 1000); // 5 minutes
-}
-
-// Initialize
-updateLiveTilePeriodically();
+setInterval(fetchData, 600000);

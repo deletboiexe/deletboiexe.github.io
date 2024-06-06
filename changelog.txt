@@ -11,4 +11,8 @@
 - updated archives.html
 
 0.2b.9 (05.06.2024)
-- attempting to make a live tile 
+- added stats from competitive mindnight
+
+0.2b.10 (06.06.2024)
+- improved mindnightstats code
+- added titles for webpages
