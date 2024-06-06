@@ -16,3 +16,5 @@
 0.2b.10 (06.06.2024)
 - improved mindnightstats code
 - added titles for webpages
+
+0.2b.11 (06.06.2024)
