@@ -1,10 +1,29 @@
 @font-face {
-    font-family: 'Munro';
-    src: url('../Munro.ttf') format('ttf'),
+    font-family: 'MyCustomFont';
+    src: url('../Munro.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+
+  html {
+    background-image: url('../images/mindnightmainmenu.png');
+    background-size: cover;
+    background-attachment: fixed;
   }
   
   body {
-    font-family: 'Munro', sans-serif;
+    font-family: 'MyCustomFont', sans-serif;
+    color: #ccc;
+    background: url('../images/mindnightmainmenu.png') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    
   }
   
   .data-table {
@@ -14,13 +33,11 @@
   
   .data-table th,
   .data-table td {
-    border: 1px solid #ccc;
+    border: 1px solid #555;
     padding: 8px;
-    font-family: 'Munro', sans-serif; 
+    font-family: 'MyCustomFont', sans-serif;
   }
   
   .data-table th {
-    background-color: #f2f2f2;
-    font-weight: bold;
+    font-weight: 700;
   }
-  

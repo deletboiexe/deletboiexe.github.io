@@ -23,4 +23,8 @@
 0.2b.12 (06.06.2024)
 - more bug fixes
 - mnstats should appear as a table
+
+0.2b.13 (07.06.2024)
+- even more bug fixes
+- made the table look better
 - used munro.ttf for mnstats

@@ -22,6 +22,12 @@ function updateStats(data) {
   // Create table rows and cells
   data.forEach((row, rowIndex) => {
     const tr = document.createElement('tr');
+
+    // Add row number cell
+    const rowNumberCell = document.createElement('td');
+    rowNumberCell.textContent = rowIndex === 0 ? ' ' : rowIndex; // Add # for the header row
+    tr.appendChild(rowNumberCell);
+
     row.forEach((cell, cellIndex) => {
       const td = document.createElement(rowIndex === 0 ? 'th' : 'td'); // Use th for header row
       td.textContent = cell;
